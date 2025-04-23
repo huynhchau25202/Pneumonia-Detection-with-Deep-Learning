@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống chẩn đoán viêm phổi AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Container chính -->
+    <div class="container">
+        <!-- Tiêu đề -->
+        <h1>🩻 Hệ thống chẩn đoán viêm phổi</h1>
+        <p>Tải ảnh chụp X-quang ngực của bạn lên để được chẩn đoán</p>
+
+        <!-- Form upload file -->
+        <form method="POST" enctype="multipart/form-data" class="form">
+            <div class="file-input-container">
+                <input type="file" name="image" id="file-upload" accept="image/*" required>
+                <label for="file-upload">Chọn ảnh X-quang</label>
+            </div>
+
+            <!-- Hiển thị tên file chọn -->
+            <div id="file-name" class="no-file-chosen">Chưa chọn file</div>
+
+            <!-- Nút submit -->
+            <button type="submit">Chẩn đoán</button>
+        </form>
+
+        <!-- Hiển thị kết quả dự đoán -->
+        {% if prediction %}
+            <div class="result">
+                <h2>🧪 Kết quả dự đoán:</h2>
+                <p class="{{ 'positive' if prediction == 'PNEUMONIA' else 'negative' }}">Chẩn đoán: {{ prediction }}</p>
+                <img src="{{ image_url }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Chẩn đoán AI Viêm phổi</p>
+    </footer>
+
+    <!-- JavaScript để thay đổi tên file -->
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function(event) {
+            var fileName = event.target.files[0]?.name || "Chưa chọn file";
+            document.getElementById("file-name").innerText = fileName;
+        });
+    </script>
+
+</body>
+</html>

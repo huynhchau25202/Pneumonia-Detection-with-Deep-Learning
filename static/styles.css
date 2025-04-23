@@ -1,0 +1,141 @@
+/* Cấu hình chung */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+/* Container chính */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+/* Tiêu đề và mô tả */
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Form upload file */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Hiển thị tên file */
+.no-file-chosen {
+    font-size: 1.1em;
+    color: #888;
+    font-style: italic;
+}
+
+/* Button submit */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Kết quả chẩn đoán */
+.result {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+.result h2 {
+    font-size: 1.8em;
+    color: #34495e;
+}
+
+.result p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.result .positive {
+    color: #e74c3c;
+}
+
+.result .negative {
+    color: #2ecc71;
+}
+
+.result img {
+    margin-top: 20px;
+    max-width: 80%;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Footer */
+footer {
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .result img {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
